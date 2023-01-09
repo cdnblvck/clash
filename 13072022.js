@@ -21,3 +21,21 @@ const uno = (text) => {
     }
     return str
 }
+
+
+/**
+ * Variante /[^[A-Z]]/i not letter
+ * @param text
+ * @returns {number}
+ */
+const countLetter = (text) => {
+    return (text.match(new RegExp(/[A-Za-z]/, "g")) || []).length
+}
+//count
+//("longString147".match(/\d+/g) || []).length
+
+function reshape(string, num) {
+    let str = string.replace(/\s/g, '')
+    let regex = new RegExp(".{" + num + "}", "g");
+    return str.replace(regex, "$&\n");
+}
